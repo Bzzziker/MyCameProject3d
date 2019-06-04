@@ -47,6 +47,11 @@ public class PlayerMauseController : MonoBehaviour
         }
         if (ActivObject.tag == "Characters")
         {
+            if(hit.collider.tag == "Enemy")
+            {
+                ActivObject.GetComponent<PlayerCharacterContoller>().Attack(hit.collider.gameObject);
+            }
+            else
             ActivObject.GetComponent<PlayerCharacterContoller>().welk(hit.point);
         }
         
